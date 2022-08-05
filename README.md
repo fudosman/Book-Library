@@ -1,17 +1,22 @@
-# Portfolio-Backend the odin project
+# Book Library Backend
 
-Backend server of Odin Portfolio site
+Backend server service for a book Library web application
 ## Technologies  
 * [Node Js](https://nodejs.org/en/)
 * [Express Js](https://expressjs.com/)
 * [MongoDB Database (Mongoose)](https://www.mongodb.com/)  
-* [Postman Documentation](https://documenter.getpostman.com/view/19482223/VUjLK72f/)
 ## About the project
 ### this is a simple backend service for the following functions
   
-* 1. to serve up dynamic content for populating the frontend
+* 1. You can add a book
 
-* 2. to create edit and delete content from the Odin Portfolio site
+* 2. You can browse through all books
+
+* 3. You can view details of each book
+
+* 4. You can edit a book
+
+* 5. You can delete a book
 
 *`please feel free to add more functionalities to this code base`*
 
@@ -59,12 +64,12 @@ Make sure you have the following prerequisites installed on your operating syste
   ### Set up your Local Development Environment  
   Follow the following instructions to start contributing.
 
-  **1.** Fork [this](https://github.com/AnambraLearnsTogether/portfolio-project-from-Odin_Project.git/) repository.
+  **1.** Fork [this](https://github.com/fudosman/Book-Library.git) repository.
 
   **2.** Clone your forked copy of the project.
 
   ```
-  git clone https://github.com/<your-github-username>/portfolio-project-from-Odin_Project.git
+  git clone https://github.com/<your-github-username>/Book-Library.git
   ```
 
   **3.** Navigate to the project directory.
@@ -76,7 +81,7 @@ Make sure you have the following prerequisites installed on your operating syste
   **4.** Add a reference(remote) to the original repository.
   
   ```
-  git remote add upstream https://github.com/AnambraLearnsTogether/portfolio-project-from-Odin_Project.git
+  git remote add upstream https://github.com/fudosman/Book-Library.git
   ```
 
   **5.** Check the remotes for this repository.
