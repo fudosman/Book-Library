@@ -2,37 +2,45 @@ const Book = require("../models/book");
 
 module.exports.postBook = async (req, res) => {
   try {
-    const {
-      title,
-      datePublished,
-      description,
-      pageCount,
-      genre,
-      bookId,
-      publisher
-    } = req.body;
-    const newBook = new Book({
-      title,
-      datePublished,
-      description,
-      pageCount,
-      genre,
-      bookId,
-      publisher
-    });
-    if(!title || !datePublished || !description || !pageCount || !genre || !bookId || !publisher) {
+    const data = req.body;
+    if (!data.title) {
       return res.status(400).json({
-        msg: "All fields are required"
+        msg: "Title is required"
       });
     }
-    if(!newBook.isValid) {
+    if (!data.datePublished) {
       return res.status(400).json({
-        msg: newBook.errors
+        msg: "Date Published is required"
       });
     }
-    await newBook.save();
-    return res.status(201).json(newBook);
-
+    if (!data.description) {
+      return res.status(400).json({
+        msg: "Description is required"
+      });
+    }
+    if (!data.pageCount) {
+      return res.status(400).json({
+        msg: "Page Count is required"
+      });
+    }
+    if (!data.genre) {
+      return res.status(400).json({
+        msg: "Genre is required"
+      });
+    }
+    if (!data.bookId) {
+      return res.status(400).json({
+        msg: "Book Id is required"
+      }); 
+    }
+    if (!data.publisher) {
+      return res.status(400).json({
+        msg: "Publisher is required"
+      });
+    }
+    const book = new Book(data);
+    await book.save();
+    return res.status(201).json(book);
   } catch (err) {
     console.log(err);
     return res.status(500).json({

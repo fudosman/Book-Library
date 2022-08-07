@@ -1,4 +1,4 @@
-# Book Library Backend
+# Book Library Backend javascript version
 
 Backend server service for a book Library web application
 ## Technologies  
