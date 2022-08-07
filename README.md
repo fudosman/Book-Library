@@ -8,15 +8,15 @@ Backend server service for a book Library web application
 ## About the project
 ### this is a simple backend service for the following functions
   
-* 1. You can add a book
+* You can add a book
 
-* 2. You can browse through all books
+* You can browse through all books
 
-* 3. You can view details of each book
+* You can view details of each book
 
-* 4. You can edit a book
+* You can edit a book
 
-* 5. You can delete a book
+* You can delete a book
 
 *`please feel free to add more functionalities to this code base`*
 
@@ -158,3 +158,4 @@ Make sure you have the following prerequisites installed on your operating syste
 
   **14.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
 # Book-Library
+# wally-Library

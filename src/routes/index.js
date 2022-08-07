@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const upload = require('../middlewares/multer.middleware');
-const postBlog = require("../controllers/projects");
+const postBlog = require("../controllers/book");
 const aboutMe = require("../controllers/aboutme");
 
 // blog routes

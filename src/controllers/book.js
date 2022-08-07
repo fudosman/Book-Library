@@ -1,6 +1,6 @@
 const cloudinary = require('../middlewares/cloudinary');
 const fs = require('fs');
-const Work = require("../models/projects");
+const Book = require("../models/book");
 
 module.exports = async (req, res) => {
   try {
@@ -21,19 +21,16 @@ module.exports = async (req, res) => {
       githubUrl,
       liveLink,
     } = req.body;
-    const work = new Work({
-      title,
-      headline,
-      githubUrl,
-      liveLink,
+    const book = new Book({
+     
       image: urls,
     });
     // console.log(work);
-    const newWork = await work.save();
+    const newBook = await book.save();
 
     res.status(200).json({
       message: "images uploaded successfully",
-      data: newWork
+      data: newBook
     });
   } catch (err) {
     console.log(err);
