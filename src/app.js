@@ -27,5 +27,4 @@ app.get("/", (req, res) => res.status(200).send("the server is running!"));
 app.use("/api", routes);
 app.all("*", error404);
 
-
 module.exports = app;

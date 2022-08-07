@@ -9,7 +9,7 @@ const {
   deleteBook
 } = require("../controllers/book");
 
-// blog routes
+// book routes
 router.route('/book')
   .get(getAllBook)
   .post(postBook);

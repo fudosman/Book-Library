@@ -52,6 +52,11 @@ module.exports.postBook = async (req, res) => {
 module.exports.getAllBook = async (req, res) => {
   try {
     const books = await Book.find();
+    if(!books) {
+      return res.status(404).json({
+        msg: "No books found"
+      });
+    }
     return res.status(200).json(books);
   } catch (err) {
     console.log(err);
@@ -71,7 +76,6 @@ module.exports.getOneBook = async (req, res) => {
       });
     }
     return res.status(200).json(book);
-
   } catch (err) {
     console.log(err);
     return res.status(500).json({

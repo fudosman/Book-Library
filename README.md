@@ -93,7 +93,7 @@ Make sure you have the following prerequisites installed on your operating syste
   **6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project (updated repository).
 
   ```
-  git pull upstream dev
+  git pull upstream main
   ```
 
   **7.** Create a new branch.
@@ -105,7 +105,7 @@ Make sure you have the following prerequisites installed on your operating syste
   **8.** Install the dependencies for running the server.
 
   ```
-  npm install --save
+  npm install 
   ```
 
   **9.** Start the server in development or in production.  
@@ -113,17 +113,8 @@ Make sure you have the following prerequisites installed on your operating syste
    ```
   npm run dev
   ```
-  ```
-  npm run start
-  ```
 
-  **10.** Make necessary changes to the codebase and and lint the code using.
-  
-  ```
-  npm run lint:fix
-  ```
-
-  **11.** Track your changes.
+  **10.** Track your changes.
 
   ```
   git add .
@@ -134,12 +125,12 @@ Make sure you have the following prerequisites installed on your operating syste
   ```
 
 
-  **12.** While you are working on your branch, other developers may update the `dev` branch with their branch. This action means your branch is now out of date with the `dev` branch and missing content. So to fetch the new changes, follow along:
+  **11.** While you are working on your branch, other developers may update the `dev` branch with their branch. This action means your branch is now out of date with the `dev` branch and missing content. So to fetch the new changes, follow along:
 
   ```
-  git checkout dev
-  git fetch origin dev
-  git merge upstream/dev
+  git checkout main
+  git fetch origin main
+  git merge upstream/main
   git push origin
   ```
 
@@ -147,7 +138,7 @@ Make sure you have the following prerequisites installed on your operating syste
 
   ```
   git checkout <your_branch_name>
-  git merge dev
+  git merge main
   ```
 
   **13.** Push the committed changes in your feature branch to your remote repo.
