@@ -1,23 +1,22 @@
 const express = require("express");
 const router = express.Router();
 
-const upload = require('../middlewares/multer.middleware');
-const postBlog = require("../controllers/book");
-const aboutMe = require("../controllers/aboutme");
+const {
+  postBook,
+  getAllBook,
+  getOneBook,
+  updateBook,
+  deleteBook
+} = require("../controllers/book");
 
 // blog routes
-router.route('/work')
-  .get()
-  .post(upload.array('image',1), postBlog)
-  .put()
-  .delete();
+router.route('/book')
+  .get(getAllBook)
+  .post(postBook);
 
-// user routes
-router.route('/user')
-  .get()
-  .post(upload.array('image',2), aboutMe)
-  .put()
-  .delete();
-
+router.route('/book/:id')
+  .get(getOneBook)
+  .put(updateBook)
+  .delete(deleteBook);
 
 module.exports = router;

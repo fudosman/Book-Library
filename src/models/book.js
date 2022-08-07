@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
-  images: {
-    type: Array,
-    required: [true, "an images must be included"],
-  },
   title: {
     type: String,
     required: [true, "a title must be included"],
@@ -22,11 +18,18 @@ const bookSchema = new Schema({
     type: Number,
     required: [true, "a page count must be included"],
   },
-  author: {
-    type: Schema.Types.ObjectId,
-    ref: "Author",
-    required: [true, "an author must be included"],
-  } 
+  genre: {
+    type: String,
+    required: [true, "a genre must be included"],
+  },
+  bookId: {
+    type: Number,
+    required: [true, "a book id must be included"],
+  },
+  publisher: {
+    type: String,
+    required: [true, "a publisher must be included"],
+  }
 }, {
   timestamps: true,
 });
