@@ -3,6 +3,7 @@ const Book = require("../models/book");
 module.exports.postBook = async (req, res) => {
   try {
     const data = req.body;
+
     if (!data.title) {
       return res.status(400).json({
         msg: "Title is required"
@@ -38,6 +39,7 @@ module.exports.postBook = async (req, res) => {
         msg: "Publisher is required"
       });
     }
+    data.postedBy = req.user._id;
     const book = new Book(data);
     await book.save();
     return res.status(201).json(book);
@@ -89,9 +91,16 @@ module.exports.updateBook = async (req, res) => {
     const { id } = req.params;
     const { title, datePublished, description, pageCount, genre, bookId, publisher } = req.body;
     const book = await Book.findById(id);
+    const {_id} = req.user;
+    
     if(!book) {
       return res.status(404).json({
         msg: "Book not found"
+      });
+    }
+    if(_id.toString() != book.postedBy) {
+      return res.status(401).json({
+        msg: "Not authorized to edit this book"
       });
     }
     if(title) {
@@ -129,9 +138,16 @@ module.exports.deleteBook = async (req, res) => {
   try {
     const { id } = req.params;
     const book = await Book.findById(id);
+    const {_id} = req.user;
     if(!book) {
       return res.status(404).json({
         msg: "Book not found"
+      });
+    }
+    
+     if(_id.toString() != book.postedBy) {
+      return res.status(401).json({
+        msg: "Not authorized to delete this book"
       });
     }
     await book.remove();

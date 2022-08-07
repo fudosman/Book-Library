@@ -6,6 +6,11 @@ const bookSchema = new Schema({
     type: String,
     required: [true, "a title must be included"],
   },
+  postedBy:{
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: [true, "a user must be included"],
+  },
   datePublished: {
     type: Date,
     required: [true, "a date must be included"],

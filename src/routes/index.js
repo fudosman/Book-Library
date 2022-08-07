@@ -1,5 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const {
+  protect
+} = require('../middleware/auth');
 
 const {
   postBook,
@@ -9,14 +12,26 @@ const {
   deleteBook
 } = require("../controllers/book");
 
+const {
+  signup,
+  login
+} = require('../controllers/user');
+
 // book routes
 router.route('/book')
-  .get(getAllBook)
-  .post(postBook);
+  .get(protect, getAllBook)
+  .post(protect, postBook);
 
 router.route('/book/:id')
-  .get(getOneBook)
-  .put(updateBook)
-  .delete(deleteBook);
+  .get(protect, getOneBook)
+  .put(protect, updateBook)
+  .delete(protect, deleteBook);
+
+// user routes
+router.route('/register')
+  .post(signup);
+
+router.route('/login')
+  .post(login);
 
 module.exports = router;
